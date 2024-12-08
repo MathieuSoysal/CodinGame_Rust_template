@@ -151,7 +151,7 @@ jobs:
           run: for file in rust-template-*/rust-template-*; do openssl dgst -sha256 -r "$file" | awk '{print $1}' > "${file}.sha256"; done
   
         - name: Build | Add Artifacts to Release
-          uses: softprops/action-gh-release@v1
+          uses: softprops/action-gh-release@v2
           with:
             files: rust-template-*/rust-template-*
             tag_name: ${{ github.ref }}
