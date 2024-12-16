@@ -17,7 +17,7 @@ regex = "1.8.4"
 time = "0.3.22"
 
 [dev-dependencies]
-criterion = "0.4"
+criterion = "0.5"
 
 
 [[bench]]
