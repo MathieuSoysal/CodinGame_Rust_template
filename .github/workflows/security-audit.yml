@@ -16,7 +16,7 @@ jobs:
         name: Cargo check dependencies
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v4
+          - uses: actions/checkout@v5
           - name: Install Rust nightly
             uses: dtolnay/rust-toolchain@nightly
           - name: Install cargo-binstall
@@ -35,7 +35,7 @@ jobs:
         continue-on-error: true
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v4
+          uses: actions/checkout@v5
         - uses: actions-rs/audit-check@v1
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
             checks:
               - bans licenses sources
         steps:
-        - uses: actions/checkout@v4
+        - uses: actions/checkout@v5
         - uses: EmbarkStudios/cargo-deny-action@v1
           with:
             command: check ${{ matrix.checks }}
@@ -64,7 +64,7 @@ jobs:
     #       pull-requests: write
     #     runs-on: ubuntu-latest
     #     steps:
-    #     - uses: actions/checkout@v4
+    #     - uses: actions/checkout@v5
     #     - uses: viperproject/prusti-action@master
     #       with:
     #         path: .
@@ -73,7 +73,7 @@ jobs:
         name: Cargo Rudra check memory safety
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v4
+          - uses: actions/checkout@v5
           - name: Rudra
             uses: sslab-gatech/Rudra@master
 
